@@ -1,8 +1,12 @@
 const sha256 = require("sha256");
+const currentNodeUrl = process.argv[3];
 
 function Blockchain() {
   this.chain = [];
   this.pendingTractions = [];
+
+  this.currentNodeUrl = currentNodeUrl;
+  this.networkNodes = [];
 
   // Initialize block chains with Genesis Block
   this.createNewBlock(100, "0", "0");
